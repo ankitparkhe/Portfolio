@@ -23,25 +23,40 @@
 // // unregister() to register() below. Note this comes with some pitfalls.
 // // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
+
+// import React from "react";
+// import ReactDOM from "react-dom/client"; // ⬅️ updated import
+// import App from "./App";
+// import { BrowserRouter } from "react-router-dom";
+// import { BaseProvider, LightTheme } from "baseui";
+// import { Provider as StyletronProvider } from "styletron-react";
+// import { Client as Styletron } from "styletron-engine-atomic";
+// import "./index.css";
+// import "./assets/font-awesome/css/all.css";
+
+// const engine = new Styletron();
+// const root = ReactDOM.createRoot(document.getElementById("root")); // ⬅️ updated for React 18
+
+// root.render(
+//   <StyletronProvider value={engine}>
+//     <BaseProvider theme={LightTheme}>
+//       <BrowserRouter>
+//         <App />
+//       </BrowserRouter>
+//     </BaseProvider>
+//   </StyletronProvider>
+// );
 import React from "react";
-import ReactDOM from "react-dom/client"; // ⬅️ updated import
+import ReactDOM from "react-dom/client"; // ✅ updated for React 18
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { BaseProvider, LightTheme } from "baseui";
-import { Provider as StyletronProvider } from "styletron-react";
-import { Client as Styletron } from "styletron-engine-atomic";
 import "./index.css";
 import "./assets/font-awesome/css/all.css";
 
-const engine = new Styletron();
-const root = ReactDOM.createRoot(document.getElementById("root")); // ⬅️ updated for React 18
+const root = ReactDOM.createRoot(document.getElementById("root")); // ✅ React 18 way
 
 root.render(
-  <StyletronProvider value={engine}>
-    <BaseProvider theme={LightTheme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </BaseProvider>
-  </StyletronProvider>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
